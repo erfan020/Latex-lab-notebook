@@ -1,0 +1,117 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\geometry{a4paper, margin=1in}
+
+% Set up the header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+
+\begin{document}
+	
+	% Title Page
+	\begin{titlepage}
+		\centering
+		\vspace*{2cm}
+		
+		% Decorative Line
+		\noindent\rule{\textwidth}{1pt}\\[0.5cm]
+		
+		% Project Title
+		{\Huge\textbf{\color{blue}LAB NOTEBOOK USING LATEX}}\\
+		\vspace{0.5cm}
+		\noindent\rule{\textwidth}{1pt}\\[2cm]
+		
+		% Group Details
+		\Large\textbf{Submitted by:}\\
+		\vspace{0.5cm}
+		
+		\textbf{\color{red}Group Leader:}\\
+		\vspace{0.3cm}
+		\Large MD Erfanuddin\\
+		\large Roll Number: 30001223001\\
+		Department: BCA\\
+		
+		\vspace{1.5cm}
+		
+		\textbf{\color{green}Group Members:}\\
+		\vspace{0.5cm}
+		
+		\large
+		\begin{tabbing}
+			\hspace{4cm} \= \hspace{8cm} \= \kill
+			\textbf{Name} \> \textbf{Roll Number} \> \textbf{Department} \\
+			\textcolor{purple}{Sanchita Laha} \> 30084323022 \> BSc in Data Science \\
+			\textcolor{purple}{Arnov Pal} \> 30001223067 \> BCA \\
+			\textcolor{purple}{Abir Dey} \> 30001223010 \> BCA \\
+			\textcolor{purple}{Ibnoon Qais} \> 30059223003 \> BSc in Forensic Sciences \\
+		\end{tabbing}
+		
+		\vfill
+		
+		% Department and University Information
+		\Large\textbf{\color{orange}Git Assignment}\\
+		\Large\textbf{\color{blue}Maulana Abul Kalam Azad University of Technology}\\
+		\vspace{0.5cm}
+		\Large\textbf{Date: \today}
+		
+		% Decorative Line at the Bottom
+		\vspace{2cm}
+		\noindent\rule{\textwidth}{1pt}
+		
+	\end{titlepage}
+	
+	% Index Page
+	\newpage
+	\tableofcontents
+	
+	% Md Erfanuddin's Page
+	\newpage
+	\section{C Programming Calculator /by : Md.Erfanuddin}
+	\subsection{Introduction}
+	This document outlines how to set up a local repository, create a C calculator program, commit the code, and push it to GitHub.
+	\subsection{Steps}
+	\begin{enumerate}
+		\item Create a local repository using git init.
+		\item Build the C program (Calculator).
+		\item Commit the code with git commit.
+		\item Create a public repository on GitHub.
+		\item Push the local repository to GitHub.
+	\end{enumerate}
+	\subsection{Code Snippet}
+	\begin{verbatim}
+		#include <stdio.h>
+		
+		int main() {
+			char operator;
+			double num1, num2;
+			
+			printf("Enter an operator (+, -, *, /): ");
+			scanf("%c", &operator);
+			printf("Enter two operands: ");
+			scanf("%lf %lf", &num1, &num2);
+			
+			switch (operator) {
+				case '+': printf("%.2lf + %.2lf = %.2lf\n", num1, num2, num1 + num2); break;
+				case '-': printf("%.2lf - %.2lf = %.2lf\n", num1, num2, num1 - num2); break;
+				case '*': printf("%.2lf * %.2lf = %.2lf\n", num1, num2, num1 * num2); break;
+				case '/': 
+				if (num2 != 0.0) printf("%.2lf / %.2lf = %.2lf\n", num1, num2, num1 / num2);
+				else printf("Division by zero error.\n");
+				break;
+				default: printf("Invalid operator.\n"); break;
+			}
+			return 0;
+		}
+		
+	\end{verbatim}
+
+    \end{document}
