@@ -113,5 +113,47 @@
 		}
 		
 	\end{verbatim}
-
+% Abir Dey's Page
+	\newpage
+	\section{Enumerate ABC Format and Roman Number / by: Abir Dey}
+	\subsection{Introduction}
+	This document demonstrates how to create enumerated lists in LaTeX using ABC format and Roman numerals, providing flexibility in list formatting.
+	
+	\subsection{Creating an ABC Format Enumerated List}
+	To create an enumerated list in ABC format (a, b, c), use the enumerate environment with label=\alph*.:
+	
+	\begin{verbatim}
+		\begin{enumerate}[label=\alph*.]
+			\item First item
+			\item Second item
+			\item Third item
+		\end{enumerate}
+	\end{verbatim}
+	
+	Result:
+	
+	\begin{enumerate}[label=\alph*.]
+		\item First item
+		\item Second item
+		\item Third item
+	\end{enumerate}
+	
+	\subsection{Creating a Roman Numerals Enumerated List}
+	For a list with Roman numerals (i, ii, iii), use label=\roman*.:
+	
+	\begin{verbatim}
+		\begin{enumerate}[label=\roman*.]
+			\item First item
+			\item Second item
+			\item Third item
+		\end{enumerate}
+	\end{verbatim}
+	
+	Result:
+	
+	\begin{enumerate}[label=\roman*.]
+		\item First item
+		\item Second item
+		\item Third item
+	\end{enumerate}
     \end{document}
