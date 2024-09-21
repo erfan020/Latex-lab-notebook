@@ -16,34 +16,42 @@
 \fancyhead[R]{\thepage}
 
 \begin{document}
-	
+
 	% Title Page
 	\begin{titlepage}
 		\centering
-		\vspace*{2cm}
+		\vspace*{1cm}
 		
 		% Decorative Line
-		\noindent\rule{\textwidth}{1pt}\\[0.5cm]
+		\noindent\rule{\textwidth}{1pt}\\[0.3cm]
 		
 		% Project Title
 		{\Huge\textbf{\color{blue}LAB NOTEBOOK USING LATEX}}\\
 		\vspace{0.5cm}
-		\noindent\rule{\textwidth}{1pt}\\[2cm]
+		\noindent\rule{\textwidth}{1pt}\\[1.5cm]
+		
+		% Insert Image (adjusted size)
+		\includegraphics[width=0.2\textwidth]{makaut.png} % Specify the path to your image here
+		\vspace{0.8cm}
+		
+		% University Name
+		\Large\textbf{\color{blue}Maulana Abul Kalam Azad University of Technology}\\
+		\vspace{0.8cm}
 		
 		% Group Details
 		\Large\textbf{Submitted by:}\\
-		\vspace{0.5cm}
+		\vspace{0.3cm}
 		
 		\textbf{\color{red}Group Leader:}\\
-		\vspace{0.3cm}
+		\vspace{0.2cm}
 		\Large MD Erfanuddin\\
 		\large Roll Number: 30001223001\\
 		Department: BCA\\
 		
-		\vspace{1.5cm}
+		\vspace{1cm}
 		
 		\textbf{\color{green}Group Members:}\\
-		\vspace{0.5cm}
+		\vspace{0.3cm}
 		
 		\large
 		\begin{tabbing}
@@ -59,60 +67,69 @@
 		
 		% Department and University Information
 		\Large\textbf{\color{orange}Git Assignment}\\
-		\Large\textbf{\color{blue}Maulana Abul Kalam Azad University of Technology}\\
-		\vspace{0.5cm}
-		\Large\textbf{Date: \today}
 		
 		% Decorative Line at the Bottom
-		\vspace{2cm}
+		\vspace{1.5cm}
 		\noindent\rule{\textwidth}{1pt}
 		
 	\end{titlepage}
+
+
 	
 	% Index Page
 	\newpage
 	\tableofcontents
 	
 	% Md Erfanuddin's Page
-	\newpage
-	\section{C Programming Calculator /by : Md.Erfanuddin}
-	\subsection{Introduction}
-	This document outlines how to set up a local repository, create a C calculator program, commit the code, and push it to GitHub.
-	\subsection{Steps}
-	\begin{enumerate}
-		\item Create a local repository using git init.
-		\item Build the C program (Calculator).
-		\item Commit the code with git commit.
-		\item Create a public repository on GitHub.
-		\item Push the local repository to GitHub.
-	\end{enumerate}
-	\subsection{Code Snippet}
-	\begin{verbatim}
-		#include <stdio.h>
-		
-		int main() {
-			char operator;
-			double num1, num2;
-			
-			printf("Enter an operator (+, -, *, /): ");
-			scanf("%c", &operator);
-			printf("Enter two operands: ");
-			scanf("%lf %lf", &num1, &num2);
-			
-			switch (operator) {
-				case '+': printf("%.2lf + %.2lf = %.2lf\n", num1, num2, num1 + num2); break;
-				case '-': printf("%.2lf - %.2lf = %.2lf\n", num1, num2, num1 - num2); break;
-				case '*': printf("%.2lf * %.2lf = %.2lf\n", num1, num2, num1 * num2); break;
-				case '/': 
-				if (num2 != 0.0) printf("%.2lf / %.2lf = %.2lf\n", num1, num2, num1 / num2);
-				else printf("Division by zero error.\n");
-				break;
-				default: printf("Invalid operator.\n"); break;
-			}
-			return 0;
-		}
-		
-	\end{verbatim}
+\newpage
+\section{C Programming Calculator /by : Md. Erfanuddin}
+\subsection{Introduction}
+This document outlines how to create a C calculator program and push it to GitHub.
+
+\subsection{Steps}
+\begin{enumerate}
+    \item Initialize local repository:
+    \begin{verbatim}
+        git init
+    \end{verbatim}
+    \item Build the C program.
+    \item Commit the code:
+    \begin{verbatim}
+        git add .
+        git commit -m "Initial commit: C calculator"
+    \end{verbatim}
+    \item Create a public repository on GitHub.
+    \item Push to GitHub:
+    \begin{verbatim}
+        git remote add origin <repository-url>
+        git push -u origin master
+    \end{verbatim}
+\end{enumerate}
+
+\subsection{Code Snippet}
+\begin{verbatim}
+#include <stdio.h>
+
+int main() {
+    char operator; double num1, num2;
+    printf("Enter operator (+, -, *, /): "); scanf("%c", &operator);
+    printf("Enter two operands: "); scanf("%lf %lf", &num1, &num2);
+    switch (operator) {
+        case '+': printf("%.2lf + %.2lf = %.2lf\n", num1, num2, num1 + num2); break;
+        case '-': printf("%.2lf - %.2lf = %.2lf\n", num1, num2, num1 - num2); break;
+        case '*': printf("%.2lf * %.2lf = %.2lf\n", num1, num2, num1 * num2); break;
+        case '/': if (num2 != 0.0) 
+                      printf("%.2lf / %.2lf = %.2lf\n", num1, num2, num1 / num2);
+                  else 
+                      printf("Division by zero error.\n");
+                  break;
+        default: printf("Invalid operator.\n"); break;
+    }
+    return 0;
+}
+\end{verbatim}
+
+
 % Abir Dey's Page
 	\newpage
 	\section{Enumerate ABC Format and Roman Number / by: Abir Dey}
@@ -156,29 +173,50 @@
 		\item Second item
 		\item Third item
 	\end{enumerate}
- % Arnov Pal's Page
-	\newpage
-	\section{Other Styles Such as Square and Circle /by: Arnov pal}
-	\subsection{Introduction}
-	This document demonstrates the creation of simple geometric shapes, such as squares and circles, using the TikZ package in LaTeX. Such shapes are often used in diagrams, flowcharts, and illustrations.
-	
-	\subsection{Examples}
-	\subsubsection{Square}
-	\begin{center}
-		\begin{tikzpicture}
-			\draw[fill=blue!30, thick] (0,0) rectangle (3,3);
-		\end{tikzpicture}
-	\end{center}
-	
-	\subsubsection{Circle}
-	\begin{center}
-		\begin{tikzpicture}
-			\draw[fill=red!30, thick] (0,0) circle (1.5cm);
-		\end{tikzpicture}
-	\end{center}
-	
-	\subsection{Conclusion}
-	The ability to create and customize shapes like squares and circles in LaTeX using TikZ provides great flexibility for creating professional documents and presentations.
+% Arnov Pal's Page
+ \newpage
+ \section{Other Styles Such as Square and Circle /by: Arnov pal}
+ \subsection{Introduction}
+This document demonstrates the creation of geometric shapes like squares and circles using the TikZ package in LaTeX, commonly used in diagrams and illustrations.
+
+\subsubsection{Square}
+To create a square, we use the \texttt{rectangle} command in the \texttt{tikzpicture} environment, defining the bottom-left corner at (0,0) and the top-right corner at (3,3). This forms a square with a side length of 3 units, filled with light blue (\texttt{blue!30}) and outlined with a thick line.
+
+\begin{verbatim}
+\begin{tikzpicture}
+ \draw[fill=blue!30, thick] (0,0) rectangle (3,3);
+\end{tikzpicture}
+\end{verbatim}
+
+The result is shown below:
+
+\begin{center}
+ \begin{tikzpicture}
+     \draw[fill=blue!30, thick] (0,0) rectangle (3,3);
+ \end{tikzpicture}
+\end{center}
+
+\subsubsection{Circle}
+For a circle, we use the \texttt{circle} command, specifying the center and radius. The code below generates a circle with a radius of 1.5 cm, filled with light red.
+
+\begin{verbatim}
+\begin{tikzpicture}
+ \draw[fill=red!30, thick] (0,0) circle (1.5cm);
+\end{tikzpicture}
+\end{verbatim}
+
+The result is shown below:
+
+\begin{center}
+ \begin{tikzpicture}
+     \draw[fill=red!30, thick] (0,0) circle (1.5cm);
+ \end{tikzpicture}
+\end{center}
+
+\subsection{Conclusion}
+Creating and customizing shapes like squares and circles in LaTeX with TikZ allows for flexible and professional diagrams. Adjusting parameters like coordinates and colors can yield diverse results.
+
+
  % Sanchita Laha's Page
 	\newpage
 	\section{Create 5 Subsections/ by : Sanchita Laha}
@@ -198,51 +236,105 @@
 	
 	\subsubsection{Subsection 5: Conclusion}
 	Summarize your findings and discuss the implications of your work. Mention any future directions or next steps.
+ \vspace{0.5cm}
+\section{How the Subsections were Created}
+To create subsections in LaTeX, use the \texttt{\textbackslash subsection} command. Below is the LaTeX code used to create the subsections:
+
+\begin{verbatim}
+\subsection{Subsection 1: Overview}
+Provide an overview of the topic you're discussing.
+
+\subsection{Subsection 2: Background Information}
+Include any necessary background information.
+
+\subsection{Subsection 3: Methodology}
+Describe the methods used in your research.
+
+\subsection{Subsection 4: Analysis}
+Present the analysis of the data or information.
+
+\subsection{Subsection 5: Conclusion}
+Summarize your findings and discuss next steps.
+\end{verbatim}
     % Ibnoon Qais's Page
 	\newpage
-	\section{Mathematical Equations and Chemical Formulas /by: Ibnoon Qais}
-	\subsection{Equation 1}
-	The equation for the square of a function is:
-	\begin{equation}
-		f(x) = x^2  
-	\end{equation}
-	
-	\subsection{Equation 2}
-	The equation in inline mode is:
-	\[
-	f(x) = x^2
-	\]
-	
-	\subsection{Equation 3}
-	The following are basic linear equations:
-	\begin{equation}
-		1+2=3 \\
-		x=3-2
-	\end{equation}
-	
-	\subsection{Equation 4}
-	The simplified form of the equations is:
-	\begin{equation*}
-		1=3-2 \\
-		x=3-2
-	\end{equation*}
-	
-	\subsection{Equation 5}
-	Aligning multiple equations:
-	\begin{align*}
-		1+2 &= 3 \\
-		1 &= 3-2
-	\end{align*}
-	
-	\subsection{Equation 6}
-	Additional mathematical expressions and chemical formulas:
-	\begin{align*}
-		f(x) &= x^2 \\
-		g(x) &=  \frac{1}{x} \\
-		F(x) &= \int_{b}^{a} \frac{1}{3}x^3 \\
-		H_{2}SO_{4} \\
-		a^2 + b^2 = c^2 \\
-		e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!}
-	\end{align*}
-    
+ \section{Mathematical Equations and Chemical Formulas /by: Ibnoon Qais}
+ \subsection{Equation 1}
+The equation for the square of a function is:
+\begin{equation}
+ f(x) = x^2  
+\end{equation}
+\textbf{LaTeX Code}: \texttt{f(x) = x\textasciicircum 2}
+
+\subsection{Equation 2}
+The equation in inline mode is:
+\[
+ f(x) = x^2
+\]
+\textbf{LaTeX Code}: \texttt{f(x) = x\textasciicircum 2}
+
+\subsection{Equation 3}
+The following are basic linear equations:
+\begin{equation}
+ 1 + 2 = 3 \\
+ x = 3 - 2
+\end{equation}
+\textbf{LaTeX Code}: 
+\begin{verbatim}
+\begin{equation}
+ 1 + 2 = 3 \\
+ x = 3 - 2
+\end{equation}
+\end{verbatim}
+
+\subsection{Equation 4}
+The simplified form of the equations is:
+\begin{equation*}
+ 1 = 3 - 2 \\
+ x = 3 - 2
+\end{equation*}
+\textbf{LaTeX Code}:
+\begin{verbatim}
+\begin{equation*}
+ 1 = 3 - 2 \\
+ x = 3 - 2
+\end{equation*}
+\end{verbatim}
+
+\subsection{Equation 5}
+Aligning multiple equations:
+\begin{align*}
+ 1 + 2 &= 3 \\
+ 1 &= 3 - 2
+\end{align*}
+\textbf{LaTeX Code}: 
+\begin{verbatim}
+\begin{align*}
+ 1 + 2 &= 3 \\
+ 1 &= 3 - 2
+\end{align*}
+\end{verbatim}
+
+\subsection{Equation 6}
+Additional mathematical expressions and chemical formulas:
+\begin{align*}
+ f(x) &= x^2 \\                % Quadratic function
+ g(x) &= \frac{1}{x} \\        % Reciprocal function
+ F(x) &= \int_{b}^{a} \frac{1}{3}x^3 \, dx \\  % Definite integral
+ H_{2}SO_{4} \\                % Chemical formula
+ a^2 + b^2 &= c^2 \\           % Pythagorean theorem
+ e^x &= \sum_{n=0}^{\infty} \frac{x^n}{n!}  % Exponential series
+\end{align*}
+\textbf{LaTeX Code}: 
+\begin{verbatim}
+\begin{align*}
+ f(x) &= x^2 \\
+ g(x) &= \frac{1}{x} \\
+ F(x) &= \int_{b}^{a} \frac{1}{3}x^3 \, dx \\
+ H_{2}SO_{4} \\
+ a^2 + b^2 &= c^2 \\
+ e^x &= \sum_{n=0}^{\infty} \frac{x^n}{n!}
+\end{align*}
+\end{verbatim}
+
     \end{document}
